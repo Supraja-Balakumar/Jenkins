@@ -1,14 +1,18 @@
 package com.supraja.SimpleApplication;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Student 
 {
-	@Autowired
+
 	Address address;
+	
+	public Student(Address address) {
+		super();
+		this.address = address;
+	}
 	public Address getAddress() {
 		return address;
 	}
