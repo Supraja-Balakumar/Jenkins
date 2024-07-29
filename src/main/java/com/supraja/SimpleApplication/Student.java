@@ -2,11 +2,13 @@ package com.supraja.SimpleApplication;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import java.util.logging.Logger;
 
 @Component
 public class Student 
 {
 
+	private static final Logger LOGGER = Logger.getLogger(Student.class.getName());
 	Address address;
 	
 	public Student(Address address) {
@@ -24,14 +26,9 @@ public class Student
     @Value("Supraja")
 	private String name;
     
-//    public Student()
-//    {
-//    	System.out.println("Object Created");
-//    }
 	public Student() {
 		super();
 		System.out.println("Object Created");
-		// TODO Auto-generated constructor stub
 	}
 	public Student(int sid, String name) {
 		super();
@@ -54,7 +51,7 @@ public class Student
 	
 	public void display()
 	{
-		System.out.println("Student Class");
+		LOGGER.info("Student class");
 		address.show();
 	}
 	@Override
